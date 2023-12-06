@@ -1,11 +1,15 @@
-/* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'maven:3.9.5-eclipse-temurin-17-alpine' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'mvn --version'
-            }
-        }
+  agent any
+  options {
+    buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+  }
+  stages {
+    stage('Hello') {
+      steps {
+        sh '''
+          java -version
+        '''
+      }
     }
+  }
 }

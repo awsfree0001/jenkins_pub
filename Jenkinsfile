@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        sh '''
+        bat '''
           java -version
         '''
       }
@@ -16,8 +16,8 @@ pipeline {
         branch "fix-*"
       }
       steps {
-        sh '''
-          cat README.md
+        bat '''
+          dir
         '''
       }
     }

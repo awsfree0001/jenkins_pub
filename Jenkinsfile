@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        sh '''
+        bat '''
           java -version
         '''
       }

@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        git url: 'https://github.com/awsfree0001/jenkins_pub.git'
+        git url: 'https://github.com/awsfree0001/jenkins_pub.git', branch: 'main'
         bat '''
         dir
         '''
